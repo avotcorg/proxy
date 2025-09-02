@@ -900,13 +900,13 @@ export default {
       
       // 订阅生成路由
       switch (url.pathname) {
-        case "/${subkey}/sub/clash":
+        case "/${pathinfo}/sub/clash":
           configs = await generateClashSub(type, bugs, bugwildcard, tls, country, limit);
           break;
-        case "/${subkey}/sub/v2rayng":
+        case "/${pathinfo}/sub/v2rayng":
           configs = await generateV2rayngSub(type, bugs, bugwildcard, tls, country, limit);
           break;
-        case "/${subkey}/sub/v2ray":
+        case "/${pathinfo}/sub/v2ray":
           configs = await generateV2raySub(type, bugs, bugwildcard, tls, country, limit);
           break;
         default:
@@ -924,23 +924,23 @@ export default {
             `====================\n` +
             `1. /active\n` +
             `   - 作用: 激活机器人或 Webhook，例如将机器人绑定到 Webhook。\n` +
-            `   - 示例: https://${inconigto}/${subkey}/active\n\n` +
+            `   - 示例: https://${inconigto}/${pathinfo}/active\n\n` +
             `2. /delete\n` +
             `   - 作用: 删除某些数据或实体，通常用于删除消息或配置。\n` +
-            `   - 示例: https://${inconigto}/${subkey}/delete\n\n` +
+            `   - 示例: https://${inconigto}/${pathinfo}/delete\n\n` +
             `3. /info\n` +
             `   - 作用: 获取机器人或 Webhook 的状态信息。\n` +
-            `   - 示例: https://${inconigto}/${subkey}/info\n\n` +
+            `   - 示例: https://${inconigto}/${pathinfo}/info\n\n` +
             `4. /deletePending\n` +
             `   - 作用: 删除处于 "pending" 状态的数据或任务。\n` +
-            `   - 示例: https://${inconigto}/${subkey}/deletePending\n\n` +
+            `   - 示例: https://${inconigto}/${pathinfo}/deletePending\n\n` +
             `====================\n` +
             `订阅 API 使用方法:\n` +
             `====================\n` +
-            `API 提供三个不同的订阅端点，可用于获取不同类型的配置: /${subkey}/sub/clash, /${subkey}/sub/v2ray, /${subkey}/sub/v2rayng。\n` +
+            `API 提供三个不同的订阅端点，可用于获取不同类型的配置: /${pathinfo}/sub/clash, /${pathinfo}/sub/v2ray, /${pathinfo}/sub/v2rayng。\n` +
       
             `URL 参数说明:\n` +
-            `- /${subkey}/sub/clash: 使用的订阅端点，可以替换为 /${subkey}/sub/v2ray 或 /${subkey}/sub/v2rayng。\n` +
+            `- /${pathinfo}/sub/clash: 使用的订阅端点，可以替换为 /${pathinfo}/sub/v2ray 或 /${pathinfo}/sub/v2rayng。\n` +
             `- 节点类型: 协议类型，可选 vless, trojan, shadowsocks, mix。\n` +
             `- 优选域名: Bug 主机名，例如 xxxxxxxx.tk.cdn.cloudflare.net。\n` +
             `- tls: 是否启用 TLS，true 启用，false 关闭。\n` +
@@ -949,18 +949,18 @@ export default {
             `- 反代国家: 国家代码，例如 US (美国)，SG (新加坡)，JP (日本)。\n\n` +
             `- AD: 搜群啦 https://t.me/soqunla   @soqunla 。\n\n` +
             `示例 URL:\n\n` +
-            `- Clash Vless : https://${inconigto}/${subkey}/sub/clash?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- Clash Trojan : https://${inconigto}/${subkey}/sub/Trojan?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- Clash Shadowsocks : https://${inconigto}/${subkey}/sub/Shadowsocks?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- Clash mix : https://${inconigto}/${subkey}/sub/mix?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +            
-            `- V2Ray vless : https://${inconigto}/${subkey}/sub/v2ray?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2Ray Trojan : https://${inconigto}/${subkey}/sub/v2ray?type=trojan&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2Ray Shadowsocks : https://${inconigto}/${subkey}/sub/v2ray?type=Shadowsocks&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2Ray mix : https://${inconigto}/${subkey}/sub/v2ray?type=mix&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2rayNG vless : https://${inconigto}/${subkey}/sub/v2rayng?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2rayNG Trojan : https://${inconigto}/${subkey}/sub/v2rayng?type=Trojan&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2rayNG Shadowsocks : https://${inconigto}/${subkey}/sub/v2rayng?type=shadowsocks&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
-            `- V2rayNG mix : https://${inconigto}/${subkey}/sub/v2rayng?type=mix&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- Clash Vless : https://${inconigto}/${pathinfo}/sub/clash?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- Clash Trojan : https://${inconigto}/${pathinfo}/sub/Trojan?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- Clash Shadowsocks : https://${inconigto}/${pathinfo}/sub/Shadowsocks?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- Clash mix : https://${inconigto}/${pathinfo}/sub/mix?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +            
+            `- V2Ray vless : https://${inconigto}/${pathinfo}/sub/v2ray?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2Ray Trojan : https://${inconigto}/${pathinfo}/sub/v2ray?type=trojan&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2Ray Shadowsocks : https://${inconigto}/${pathinfo}/sub/v2ray?type=Shadowsocks&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2Ray mix : https://${inconigto}/${pathinfo}/sub/v2ray?type=mix&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2rayNG vless : https://${inconigto}/${pathinfo}/sub/v2rayng?type=vless&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2rayNG Trojan : https://${inconigto}/${pathinfo}/sub/v2rayng?type=Trojan&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2rayNG Shadowsocks : https://${inconigto}/${pathinfo}/sub/v2rayng?type=shadowsocks&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
+            `- V2rayNG mix : https://${inconigto}/${pathinfo}/sub/v2rayng?type=mix&bug=xxxxxxxx.tk.cdn.cloudflare.net&tls=true&wildcard=false&limit=10&country=US\n` +
             `====================\n`,
             {
               status: 200,
@@ -1801,4 +1801,5 @@ function generateUUIDv4() {
     randomValues[14].toString(16).padStart(2, '0'),
     randomValues[15].toString(16).padStart(2, '0'),
   ].join('').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
+
 }
