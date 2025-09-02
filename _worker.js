@@ -6,7 +6,7 @@ let proxyIP = "";
 const DEFAULT_PROXY_BANK_URL = "https://raw.githubusercontent.com/avotcorg/proxy/refs/heads/main/ProxyList.txt";
 const TELEGRAM_BOT_TOKEN = '';
 const TELEGRAM_API_URL = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}`;
-const apiCheck = 'https://ttt.kangqiang.cf/';
+const apiCheck = 'https://kaiche.tk/';
 const ChatID = '';
 const Chanell = '';
 const Group = '';
@@ -1800,3 +1800,4 @@ function generateUUIDv4() {
     randomValues[15].toString(16).padStart(2, '0'),
   ].join('').replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5');
 }
+
