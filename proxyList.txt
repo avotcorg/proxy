@@ -1,0 +1,250 @@
+122.254.149.89,50001,韩国,SK Broadband Co Ltd
+183.103.54.125,50001,韩国,Korea Telecom
+211.199.178.200,50001,韩国,Korea Telecom
+211.184.175.180,50001,韩国,Korea Telecom
+125.128.27.185,50001,韩国,Korea Telecom
+183.107.83.237,50001,韩国,Korea Telecom
+125.141.38.50,50001,韩国,Korea Telecom
+125.139.183.20,50001,韩国,Korea Telecom
+58.127.188.254,50001,韩国,SK Broadband Co Ltd
+211.116.120.72,50001,韩国,SK Broadband Co Ltd
+58.76.69.164,50001,韩国,LG DACOM Corporation
+14.4.47.67,50001,韩国,DACOMPUBNETPLUS
+114.200.58.47,50001,韩国,SK Broadband Co Ltd
+14.32.177.121,50001,韩国,Korea Telecom
+210.180.116.107,50001,韩国,SK Broadband Co Ltd
+118.36.106.205,50001,韩国,Korea Telecom
+121.158.201.153,50001,韩国,Korea Telecom
+221.139.94.50,50001,韩国,SK Broadband Co Ltd
+112.160.242.183,50001,韩国,Korea Telecom
+218.157.222.202,50001,韩国,Korea Telecom
+59.24.1.109,50001,韩国,Korea Telecom
+175.204.77.23,50001,韩国,Korea Telecom
+1.226.227.169,50001,韩国,SK Broadband Co Ltd
+117.20.214.102,50001,韩国,HYUNDAI COMMUNICATIONS   NETWORK
+61.35.221.254,50001,韩国,LG DACOM Corporation
+115.90.84.220,50001,韩国,LG DACOM Corporation
+121.177.172.206,50001,韩国,Korea Telecom
+59.2.75.64,50001,韩国,Korea Telecom
+210.183.11.2,50001,韩国,Korea Telecom
+121.140.147.37,50001,韩国,Korea Telecom
+203.166.211.45,50001,韩国,CMB TAEGU BROADCASTING
+123.248.97.200,50001,韩国,LG HelloVision Corp
+121.153.94.6,50001,韩国,Korea Telecom
+123.111.201.248,50001,韩国,SK Broadband Co Ltd
+218.238.146.199,50001,韩国,SK Broadband Co Ltd
+121.153.38.160,50001,韩国,Korea Telecom
+118.91.78.76,50001,韩国,SK Broadband Co Ltd
+175.202.53.36,50001,韩国,Korea Telecom
+122.202.175.238,50001,韩国,KCTV JEJU BROADCASTING
+222.114.57.191,50001,韩国,Korea Telecom
+1.242.153.236,50001,韩国,SK Broadband Co Ltd
+121.186.176.93,50001,韩国,Korea Telecom
+112.165.243.245,50001,韩国,Korea Telecom
+122.47.74.139,50001,韩国,LG POWERCOMM
+123.212.249.97,50001,韩国,SK Broadband Co Ltd
+59.12.48.129,50001,韩国,Korea Telecom
+14.47.155.244,50001,韩国,Korea Telecom
+112.218.166.156,50001,韩国,LG DACOM Corporation
+115.94.122.118,50001,韩国,LG DACOM Corporation
+219.250.132.94,50001,韩国,SK Broadband Co Ltd
+211.54.164.179,50001,韩国,Korea Telecom
+220.122.227.188,50001,韩国,Korea Telecom
+118.40.126.7,50001,韩国,Korea Telecom
+221.162.150.89,50001,韩国,Korea Telecom
+27.117.52.110,50001,韩国,SK Broadband Co Ltd
+1.236.22.155,50001,韩国,SK Broadband Co Ltd
+182.231.126.156,50001,韩国,LG POWERCOMM
+59.21.90.161,50001,韩国,Korea Telecom
+210.220.89.241,50001,韩国,SK Broadband Co Ltd
+1.238.209.247,50001,韩国,SK Broadband Co Ltd
+211.204.168.129,50001,韩国,SK Broadband Co Ltd
+121.124.51.135,50001,韩国,SK Broadband Co Ltd
+175.210.52.92,50001,韩国,Korea Telecom
+61.42.88.91,50001,韩国,LG DACOM Corporation
+1.232.86.168,50001,韩国,SK Broadband Co Ltd
+113.131.137.237,50001,韩国,LG HelloVision Corp
+119.194.220.146,50001,韩国,Korea Telecom
+114.202.124.72,50001,韩国,SK Broadband Co Ltd
+183.105.48.110,50001,韩国,Korea Telecom
+220.70.226.44,50001,韩国,Korea Telecom
+59.31.155.92,50001,韩国,Korea Telecom
+110.11.180.73,50001,韩国,SK Broadband Co Ltd
+115.94.98.93,50001,韩国,LG DACOM Corporation
+1.232.150.47,50001,韩国,SK Broadband Co Ltd
+125.134.241.76,50001,韩国,Korea Telecom
+175.209.185.166,50001,韩国,Korea Telecom
+39.126.124.220,50001,韩国,SK Broadband Co Ltd
+27.118.72.85,50001,韩国,SK Broadband Co Ltd
+112.166.95.230,50001,韩国,Korea Telecom
+175.212.207.13,50001,韩国,Korea Telecom
+175.205.88.229,50001,韩国,Korea Telecom
+182.209.106.51,50001,韩国,LG POWERCOMM
+1.221.32.157,50001,韩国,LG DACOM Corporation
+14.47.2.3,50001,韩国,Korea Telecom
+175.202.28.114,50001,韩国,Korea Telecom
+175.120.200.238,50001,韩国,SK Broadband Co Ltd
+39.123.164.251,50001,韩国,SK Broadband Co Ltd
+211.222.248.186,50001,韩国,Korea Telecom
+211.230.142.157,50001,韩国,Korea Telecom
+27.100.189.152,50001,韩国,KCTV JEJU BROADCASTING
+119.203.219.248,50001,韩国,Korea Telecom
+39.113.12.98,50001,韩国,SK Broadband Co Ltd
+119.201.102.153,50001,韩国,Korea Telecom
+182.208.209.54,50001,韩国,LG POWERCOMM
+203.228.38.219,50001,韩国,Korea Telecom
+27.100.229.147,50001,韩国,KCTV JEJU BROADCASTING
+121.153.36.122,50001,韩国,Korea Telecom
+183.100.116.217,50001,韩国,Korea Telecom
+183.103.251.116,50001,韩国,Korea Telecom
+182.210.59.164,50001,韩国,LG POWERCOMM
+175.204.136.250,50001,韩国,Korea Telecom
+1.252.9.32,50001,韩国,SK Broadband Co Ltd
+221.166.156.189,50001,韩国,Korea Telecom
+221.151.212.249,50001,韩国,Korea Telecom
+121.165.104.67,50001,韩国,Korea Telecom
+220.88.159.56,50001,韩国,Korea Telecom
+211.178.133.37,50001,韩国,SK Broadband Co Ltd
+210.178.107.198,50001,韩国,Korea Telecom
+14.35.236.166,50001,韩国,Korea Telecom
+59.11.39.221,50001,韩国,Korea Telecom
+125.134.72.215,50001,韩国,Korea Telecom
+175.124.213.144,50001,韩国,SK Broadband Co Ltd
+220.78.242.43,50001,韩国,Korea Telecom
+211.206.57.122,50001,韩国,SK Broadband Co Ltd
+128.134.6.234,50001,韩国,Korea Telecom
+119.206.2.42,50001,韩国,Korea Telecom
+125.139.45.119,50001,韩国,Korea Telecom
+59.1.59.225,50001,韩国,Korea Telecom
+180.64.64.201,50001,韩国,SK Broadband Co Ltd
+220.124.109.15,50001,韩国,Korea Telecom
+1.228.139.105,50001,韩国,SK Broadband Co Ltd
+61.254.251.182,50001,韩国,SK Broadband Co Ltd
+106.240.137.36,50001,韩国,LG DACOM Corporation
+118.45.150.77,50001,韩国,Korea Telecom
+116.125.225.173,50001,韩国,SK Broadband Co Ltd
+118.223.252.190,50001,韩国,SK Broadband Co Ltd
+220.122.102.26,50001,韩国,Korea Telecom
+218.150.204.236,50001,韩国,Korea Telecom
+221.167.144.225,50001,韩国,Korea Telecom
+112.185.201.42,50001,韩国,Korea Telecom
+118.38.147.24,50001,韩国,Korea Telecom
+1.255.181.62,50001,韩国,SK Broadband Co Ltd
+121.157.168.159,50001,韩国,Korea Telecom
+211.196.80.94,50001,韩国,Korea Telecom
+106.252.245.199,50001,韩国,LG DACOM Corporation
+211.207.97.48,50001,韩国,SK Broadband Co Ltd
+112.184.56.4,50001,韩国,Korea Telecom
+222.105.131.225,50001,韩国,Korea Telecom
+121.133.66.15,50001,韩国,Korea Telecom
+125.139.107.37,50001,韩国,Korea Telecom
+61.74.149.202,50001,韩国,Korea Telecom
+121.140.34.140,50001,韩国,Korea Telecom
+39.116.242.213,50001,韩国,SK Broadband Co Ltd
+182.218.116.173,50001,韩国,LG POWERCOMM
+114.203.105.106,50001,韩国,SK Broadband Co Ltd
+211.227.65.106,50001,韩国,Korea Telecom
+118.41.28.45,50001,韩国,Korea Telecom
+106.245.216.35,50001,韩国,LG DACOM Corporation
+180.224.73.183,50001,韩国,LG POWERCOMM
+14.53.126.77,50001,韩国,Korea Telecom
+220.72.245.245,50001,韩国,Korea Telecom
+14.38.164.139,50001,韩国,Korea Telecom
+211.185.73.48,50001,韩国,Korea Telecom
+59.7.100.186,50001,韩国,Korea Telecom
+124.53.232.44,50001,韩国,LG POWERCOMM
+112.216.235.206,50001,韩国,LG DACOM Corporation
+175.212.27.19,50001,韩国,Korea Telecom
+219.249.81.170,50001,韩国,SK Broadband Co Ltd
+118.45.152.231,50001,韩国,Korea Telecom
+125.251.132.232,50001,韩国,DACOMPUBNETPLUS
+111.171.108.67,50001,韩国,SK Broadband Co Ltd
+1.215.95.244,50001,韩国,LG DACOM Corporation
+220.90.247.28,50001,韩国,Korea Telecom
+121.145.153.217,50001,韩国,Korea Telecom
+118.43.162.107,50001,韩国,Korea Telecom
+121.139.167.186,50001,韩国,Korea Telecom
+125.141.4.132,50001,韩国,Korea Telecom
+210.113.75.6,50001,韩国,Korea Telecom
+121.149.177.218,50001,韩国,Korea Telecom
+211.177.114.117,50001,韩国,SK Broadband Co Ltd
+59.31.68.195,50001,韩国,Korea Telecom
+222.96.197.31,50001,韩国,Korea Telecom
+115.23.196.54,50001,韩国,Korea Telecom
+119.192.235.87,50001,韩国,Korea Telecom
+175.193.204.22,50001,韩国,Korea Telecom
+39.122.127.15,50001,韩国,SK Broadband Co Ltd
+183.96.245.165,50001,韩国,Korea Telecom
+125.142.102.60,50001,韩国,Korea Telecom
+115.22.115.218,50001,韩国,Korea Telecom
+112.161.173.67,50001,韩国,Korea Telecom
+112.160.235.29,50001,韩国,Korea Telecom
+121.187.191.193,50001,韩国,Korea Telecom
+61.32.62.186,50001,韩国,LG DACOM Corporation
+61.43.74.149,50001,韩国,LG DACOM Corporation
+183.109.195.138,50001,韩国,Korea Telecom
+121.182.150.149,50001,韩国,Korea Telecom
+112.223.225.74,50001,韩国,LG DACOM Corporation
+211.228.5.119,50001,韩国,Korea Telecom
+124.50.6.249,50001,韩国,LG POWERCOMM
+222.235.43.197,50001,韩国,SK Broadband Co Ltd
+110.14.131.147,50001,韩国,SK Broadband Co Ltd
+211.217.223.187,50001,韩国,Korea Telecom
+106.244.201.248,50001,韩国,LG DACOM Corporation
+121.147.229.1,50001,韩国,Korea Telecom
+1.254.152.56,50001,韩国,SK Broadband Co Ltd
+218.156.119.20,50001,韩国,Korea Telecom
+119.197.86.171,50001,韩国,Korea Telecom
+221.156.182.211,50001,韩国,Korea Telecom
+121.169.217.11,50001,韩国,Korea Telecom
+112.173.109.151,50001,韩国,Korea Telecom
+220.126.185.107,50001,韩国,Korea Telecom
+175.202.12.75,50001,韩国,Korea Telecom
+175.200.121.85,50001,韩国,Korea Telecom
+220.72.76.25,50001,韩国,Korea Telecom
+14.43.156.59,50001,韩国,Korea Telecom
+221.165.64.92,50001,韩国,Korea Telecom
+211.196.114.71,50001,韩国,Korea Telecom
+39.117.12.68,50001,韩国,SK Broadband Co Ltd
+59.21.92.32,50001,韩国,Korea Telecom
+106.251.70.75,50001,韩国,LG DACOM Corporation
+222.113.74.67,50001,韩国,Korea Telecom
+211.251.201.69,50001,韩国,Korea Telecom
+59.3.62.251,50001,韩国,Korea Telecom
+112.184.215.199,50001,韩国,Korea Telecom
+121.143.184.124,50001,韩国,Korea Telecom
+175.199.174.127,50001,韩国,Korea Telecom
+222.99.42.20,50001,韩国,Korea Telecom
+119.204.199.18,50001,韩国,Korea Telecom
+14.41.4.45,50001,韩国,Korea Telecom
+121.181.209.121,50001,韩国,Korea Telecom
+222.101.117.164,50001,韩国,Korea Telecom
+118.39.44.24,50001,韩国,Korea Telecom
+211.194.135.116,50001,韩国,Korea Telecom
+210.121.207.53,50001,韩国,Korea Telecom
+203.243.54.42,50001,韩国,Korea Telecom
+125.135.43.66,50001,韩国,Korea Telecom
+49.142.150.222,50001,韩国,HYUNDAI COMMUNICATIONS   NETWORK
+121.177.244.57,50001,韩国,Korea Telecom
+211.226.15.137,50001,韩国,Korea Telecom
+59.1.170.106,50001,韩国,Korea Telecom
+14.55.225.142,50001,韩国,Korea Telecom
+61.101.131.17,50001,韩国,SK Broadband Co Ltd
+121.183.117.138,50001,韩国,Korea Telecom
+220.78.5.97,50001,韩国,Korea Telecom
+175.196.159.204,50001,韩国,Korea Telecom
+180.71.243.211,50001,韩国,SK Broadband Co Ltd
+112.169.22.131,50001,韩国,Korea Telecom
+1.237.51.17,50001,韩国,SK Broadband Co Ltd
+106.245.165.137,50001,韩国,LG DACOM Corporation
+14.34.127.157,50001,韩国,Korea Telecom
+59.1.211.230,50001,韩国,Korea Telecom
+180.182.29.173,50001,韩国,LG HelloVision Corp
+121.130.68.136,50001,韩国,Korea Telecom
+123.111.253.155,50001,韩国,SK Broadband Co Ltd
+211.184.133.123,50001,韩国,Korea Telecom
+121.132.235.18,50001,韩国,Korea Telecom
+59.27.239.101,50001,韩国,Korea Telecom
+59.6.66.9,50001,韩国,Korea Telecom
+218.150.225.33,50001,韩国,Korea Telecom
+61.79.199.11,50001,韩国,Korea Telecom
