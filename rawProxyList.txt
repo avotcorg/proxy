@@ -171,3 +171,4 @@
 211.184.133.123,50001,KR,Korea Telecom
 27.117.52.110,50001,KR,SK Broadband Co Ltd
 222.101.225.72,50001,KR,Korea Telecom
+39.116.217.120,50001,KR,SK Broadband Co Ltd
