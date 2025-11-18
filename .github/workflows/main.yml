@@ -4,53 +4,39 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 */6 * * *" # 每 6 小时运行一次
-
 jobs:
   scanner:
     runs-on: ubuntu-latest
     concurrency:
       group: proxy-scan
+      cancel-in-progress: true
 
     steps:
-      # Checkout repo，第一次也能拉取
       - uses: actions/checkout@v3
         with:
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 0
-
-      # Setup Bun
       - name: Use Bun
         uses: oven-sh/setup-bun@v2
-
-      # 确保 package.json 存在，第一次初始化也能运行
       - name: Ensure package.json exists
         run: |
           if [ ! -f package.json ]; then
             echo "Initializing package.json..."
             bun init -y
           fi
-
-      # Install dependencies
       - name: Install dependencies
         run: |
           if [ -f package.json ]; then
             bun install
           fi
-
-      # 确保 proxyip.ts 存在，第一次运行不会报错
       - name: Ensure proxyip.ts exists
         run: |
           mkdir -p ./helper
           if [ ! -f ./helper/proxyip.ts ]; then
-            echo "// 示例 proxyip.ts" > ./helper/proxyip.ts
             echo "console.log('No proxy scan script yet.');" >> ./helper/proxyip.ts
           fi
-
-      # 运行扫描脚本
       - name: Start Scan
         run: bun run ./helper/proxyip.ts
-
-      # Commit & push 结果
       - name: Publish Result
         if: ${{ success() }}
         env:
@@ -60,4 +46,5 @@ jobs:
           git config --global user.email "actions@github.com"
           git add .
           git diff --cached --quiet || git commit -m "Update proxyip [otcip ci]"
+          git pull --rebase https://x-access-token:${GH_PAT}@github.com/avotcorg/proxy.git main
           git push https://x-access-token:${GH_PAT}@github.com/avotcorg/proxy.git main
