@@ -247,3 +247,4 @@
 121.125.9.35,50001,KR,SK Broadband Co Ltd
 1.240.9.40,50001,KR,SK Broadband Co Ltd
 175.112.3.19,50001,KR,SK Broadband Co Ltd
+180.67.13.196,50001,KR,SK Broadband Co Ltd
