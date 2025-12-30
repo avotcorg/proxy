@@ -251,3 +251,4 @@
 210.205.215.87,50001,KR,SK Broadband Co Ltd
 110.9.4.54,50001,KR,SK Broadband Co Ltd
 220.120.5.74,50001,KR,Korea Telecom
+118.40.13.59,50001,KR,Korea Telecom
