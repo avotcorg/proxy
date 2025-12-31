@@ -254,3 +254,4 @@
 118.40.13.59,50001,KR,Korea Telecom
 210.183.11.2,50001,KR,Korea Telecom
 211.177.64.117,50001,KR,SK Broadband Co Ltd
+183.104.134.56,50001,KR,Korea Telecom
