@@ -384,6 +384,7 @@ const HTML_PAGE = `<!DOCTYPE html>
 <meta name="color-scheme" content="dark" />
 <title>Check ProxyIP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="https://dash.cloudflare.com/favicon.ico" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
