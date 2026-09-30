@@ -99,5 +99,5 @@
 - 批量检测会向外部接口发起大量请求，建议控制数量
 - 目标里 `#` 后面的内容（如 `1.1.1.1:443#sni`）在这个版本里会被忽略，不支持自定义 SNI
 - 端口范围是 1 到 65535，超出范围的目标会被忽略
-- 更多请关注OTC分享群频道 [@otcfxq](https://t.me/otcfxq)
+- 更多 http、https、proxyip、socks5、turn、TG代理 请关注OTC分享群频道 [@otcfxq](https://t.me/otcfxq)
 - 感谢600佬赞助 cloudflare snippets [@Six600NotLao](https://t.me/Six600NotLao)
