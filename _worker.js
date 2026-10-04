@@ -740,6 +740,7 @@ const HTML_PAGE = `<!DOCTYPE html>
       <h2>检测结果</h2>
       <div class="export-row">
         <button class="btn-ghost" id="copyBtn" type="button">复制有效结果</button>
+        <button class="btn-ghost" id="copyFailBtn" type="button">复制失败结果</button>
         <button class="btn-ghost" id="txtBtn" type="button">导出 TXT</button>
         <button class="btn-ghost" id="csvBtn" type="button">导出 CSV</button>
       </div>
@@ -820,6 +821,7 @@ const HTML_PAGE = `<!DOCTYPE html>
     statFail: document.getElementById("statFail"),
     resultsList: document.getElementById("resultsList"),
     copyBtn: document.getElementById("copyBtn"),
+    copyFailBtn: document.getElementById("copyFailBtn"),
     txtBtn: document.getElementById("txtBtn"),
     csvBtn: document.getElementById("csvBtn"),
     footerTime: document.getElementById("footerTime"),
@@ -1816,6 +1818,40 @@ const HTML_PAGE = `<!DOCTYPE html>
         el.copyBtn.textContent = "已复制";
         setTimeout(function () { el.copyBtn.textContent = original; }, 1200);
         showToast("已复制 " + lines.length + " 条有效结果", "success");
+      })
+      .catch(function (err) {
+        console.error("复制失败", err);
+        showToast("复制失败，请检查浏览器权限", "error");
+      });
+  });
+
+  function failedLines() {
+    var seen = {};
+    var out = [];
+    resultsData.forEach(function (e) {
+      if (e["有效ProxyIP"] === true) return;
+      var v = String(e["目标"] || "").trim();
+      var arrow = v.indexOf(" -> ");
+      if (arrow !== -1) v = v.slice(arrow + 4).trim();
+      if (!v || seen[v]) return;
+      seen[v] = true;
+      out.push(v);
+    });
+    return out;
+  }
+
+  el.copyFailBtn.addEventListener("click", function () {
+    var lines = failedLines();
+    if (lines.length === 0) {
+      showToast("暂无失败结果可复制", "error");
+      return;
+    }
+    writeTextToClipboard(lines.join("\\n"))
+      .then(function () {
+        var original = el.copyFailBtn.textContent;
+        el.copyFailBtn.textContent = "已复制";
+        setTimeout(function () { el.copyFailBtn.textContent = original; }, 1200);
+        showToast("已复制 " + lines.length + " 条失败结果", "success");
       })
       .catch(function (err) {
         console.error("复制失败", err);
