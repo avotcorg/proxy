@@ -1435,9 +1435,14 @@ const HTML_PAGE = `<!DOCTYPE html>
     t.textContent = entry["目标"] || "";
     t.title = "点击复制";
     t.addEventListener("click", function () {
-      var copyValue = ok
-        ? hostPort(entry)
-        : (entry["目标"] || "");
+      var copyValue;
+      if (ok) {
+        copyValue = hostPort(entry);
+      } else {
+        var label = String(entry["目标"] || "");
+        var arrow = label.indexOf(" -> ");
+        copyValue = (arrow !== -1 ? label.slice(arrow + 4) : label).trim();
+      }
       copyText(copyValue, t, copyValue);
     });
     left.appendChild(t);
