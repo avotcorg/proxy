@@ -741,6 +741,7 @@ const HTML_PAGE = `<!DOCTYPE html>
       <div class="export-row">
         <button class="btn-ghost" id="copyBtn" type="button">复制有效结果</button>
         <button class="btn-ghost" id="copyFailBtn" type="button">复制失败结果</button>
+        <button class="btn-ghost" id="copyFilterBtn" type="button">复制筛选结果</button>
         <button class="btn-ghost" id="txtBtn" type="button">导出 TXT</button>
         <button class="btn-ghost" id="csvBtn" type="button">导出 CSV</button>
       </div>
@@ -822,6 +823,7 @@ const HTML_PAGE = `<!DOCTYPE html>
     resultsList: document.getElementById("resultsList"),
     copyBtn: document.getElementById("copyBtn"),
     copyFailBtn: document.getElementById("copyFailBtn"),
+    copyFilterBtn: document.getElementById("copyFilterBtn"),
     txtBtn: document.getElementById("txtBtn"),
     csvBtn: document.getElementById("csvBtn"),
     footerTime: document.getElementById("footerTime"),
@@ -1025,49 +1027,59 @@ const HTML_PAGE = `<!DOCTYPE html>
   var DEFAULT_PORT = "443";
   function extractTargets(rawText) {
     var work = " " + rawText + " ";
-    var found = [];
-    var seen = {};
+    var posMap = {};
+    var order = [];
 
-    function add(hostForKey, port) {
+    function spaces(n) { return new Array(Math.max(n, 0) + 1).join(" "); }
+    function add(hostForKey, port, pos) {
       if (!looksLikePortShape(port)) return;
       var key = hostForKey + ":" + (port || DEFAULT_PORT);
-      if (seen[key]) return;
-      seen[key] = true;
-      found.push(key);
+      if (!Object.prototype.hasOwnProperty.call(posMap, key)) {
+        posMap[key] = pos;
+        order.push(key);
+      } else if (pos < posMap[key]) {
+        posMap[key] = pos;
+      }
     }
-    work = work.replace(/\\[([^\\]\\[]*)\\]\\(([^)\\s]*)\\)/g, " $1 $2 ");
+    work = work.replace(/\\[([^\\]\\[]*)\\]\\(([^)\\s]*)\\)/g, function (m, a, b) {
+      return " " + a + "  " + b + " ";
+    });
     work = work.replace(/\\b[a-zA-Z][a-zA-Z0-9+.-]*:\\/\\/([^\\s\\/?#"'<>()]*)/g, function (m, auth) {
       var at = auth.lastIndexOf("@");
       if (at > -1) auth = auth.slice(at + 1);
-      return " " + auth + " ";
+      return spaces(m.length - auth.length) + auth;
     });
-    work = work.replace(/\\[([0-9a-fA-F:]{2,45})\\](?::(\\d{1,5}))?/g, function (m, addr, port) {
-      if (looksLikeIPv6Shape(addr)) { add("[" + addr + "]", port); return " "; }
+    work = work.replace(/\\[([0-9a-fA-F:]{2,45})\\](?::(\\d{1,5}))?/g, function (m, addr, port, offset) {
+      if (looksLikeIPv6Shape(addr)) { add("[" + addr + "]", port, offset); return spaces(m.length); }
       return m;
     });
-    work = work.replace(/(^|[^0-9a-fA-F:.])((?:[0-9a-fA-F]{1,4}:){1,7}:?(?:[0-9a-fA-F]{1,4})?(?::[0-9a-fA-F]{1,4}){0,6})(?![0-9a-fA-F:])/g, function (m, pre, addr) {
-      if (addr.indexOf(":") !== -1 && looksLikeIPv6Shape(addr)) { add("[" + addr + "]", null); return pre + " "; }
+    work = work.replace(/(^|[^0-9a-fA-F:.])((?:[0-9a-fA-F]{1,4}:){1,7}:?(?:[0-9a-fA-F]{1,4})?(?::[0-9a-fA-F]{1,4}){0,6})(?![0-9a-fA-F:])/g, function (m, pre, addr, offset) {
+      if (addr.indexOf(":") !== -1 && looksLikeIPv6Shape(addr)) {
+        add("[" + addr + "]", null, offset + pre.length);
+        return pre + spaces(m.length - pre.length);
+      }
       return m;
     });
-    work = work.replace(/\\b(\\d{1,3}(?:\\.\\d{1,3}){3})(?::(\\d{1,5}))?\\b/g, function (m, ip, port) {
-      if (looksLikeIPv4Shape(ip)) { add(ip, port); return " "; }
+    work = work.replace(/\\b(\\d{1,3}(?:\\.\\d{1,3}){3})(?::(\\d{1,5}))?\\b/g, function (m, ip, port, offset) {
+      if (looksLikeIPv4Shape(ip)) { add(ip, port, offset); return spaces(m.length); }
       return m;
     });
-    work.split(/[\\s,;，；()\\[\\]<>"']+/).forEach(function (tok) {
-      var t = tok.trim().split(/[\\/?#]/)[0].replace(/[.。]+$/, "");
-      if (!t) return;
+    var tokRe = /[^\\s,;，；()\\[\\]<>"']+/g;
+    var mt;
+    while ((mt = tokRe.exec(work)) !== null) {
+      var t = mt[0].trim().split(/[\\/?#]/)[0].replace(/[.。]+$/, "");
+      if (!t) continue;
       var host = t, port = null;
       var idx = t.lastIndexOf(":");
       if (idx > -1 && /^\\d{1,5}$/.test(t.slice(idx + 1))) {
         host = t.slice(0, idx);
         port = t.slice(idx + 1);
       }
-      if (DOMAIN_SHAPE_RE.test(host)) add(host.toLowerCase(), port);
-    });
+      if (DOMAIN_SHAPE_RE.test(host)) add(host.toLowerCase(), port, mt.index);
+    }
 
-    return found;
+    return order.slice().sort(function (a, b) { return posMap[a] - posMap[b]; });
   }
-
   function getTargets() {
     var raw = mode === "single" ? el.singleInput.value : el.batchInput.value;
     if (mode === "batch") return extractTargets(raw);
@@ -1794,8 +1806,17 @@ const HTML_PAGE = `<!DOCTYPE html>
     return hostPort(e) + (tail ? "#" + tail : "");
   }
 
+  function orderedEntries() {
+    var out = [];
+    var kids = el.resultsList.children;
+    for (var i = 0; i < kids.length; i++) {
+      if (kids[i]._entry) out.push(kids[i]._entry);
+    }
+    return out;
+  }
+
   function validLines() {
-    return resultsData
+    return orderedEntries()
       .filter(function (e) { return e["有效ProxyIP"] === true; })
       .map(formatLine);
   }
@@ -1833,7 +1854,7 @@ const HTML_PAGE = `<!DOCTYPE html>
   function failedLines() {
     var seen = {};
     var out = [];
-    resultsData.forEach(function (e) {
+    orderedEntries().forEach(function (e) {
       if (e["有效ProxyIP"] === true) return;
       var v = String(e["目标"] || "").trim();
       var arrow = v.indexOf(" -> ");
@@ -1864,6 +1885,47 @@ const HTML_PAGE = `<!DOCTYPE html>
       });
   });
 
+  function filteredLines() {
+    var out = [];
+    var seen = {};
+    var kids = el.resultsList.children;
+    for (var i = 0; i < kids.length; i++) {
+      var c = kids[i];
+      var e = c._entry;
+      if (!e || c.hidden) continue;
+      if (e["有效ProxyIP"] === true) {
+        out.push(formatLine(e));
+      } else if (filterStatus === "fail") {
+        var v = String(e["目标"] || "").trim();
+        var arrow = v.indexOf(" -> ");
+        if (arrow !== -1) v = v.slice(arrow + 4).trim();
+        if (!v || seen[v]) continue;
+        seen[v] = true;
+        out.push(v);
+      }
+    }
+    return out;
+  }
+
+  el.copyFilterBtn.addEventListener("click", function () {
+    var lines = filteredLines();
+    if (lines.length === 0) {
+      showToast("当前筛选下暂无结果可复制", "error");
+      return;
+    }
+    writeTextToClipboard(lines.join("\\n"))
+      .then(function () {
+        var original = el.copyFilterBtn.textContent;
+        el.copyFilterBtn.textContent = "已复制";
+        setTimeout(function () { el.copyFilterBtn.textContent = original; }, 1200);
+        showToast("已复制 " + lines.length + " 条筛选结果", "success");
+      })
+      .catch(function (err) {
+        console.error("复制失败", err);
+        showToast("复制失败，请检查浏览器权限", "error");
+      });
+  });
+
   el.txtBtn.addEventListener("click", function () {
     var lines = validLines();
     if (lines.length === 0) return;
@@ -1871,7 +1933,7 @@ const HTML_PAGE = `<!DOCTYPE html>
   });
 
   el.csvBtn.addEventListener("click", function () {
-    var valid = resultsData.filter(function (e) { return e["有效ProxyIP"] === true; });
+    var valid = orderedEntries().filter(function (e) { return e["有效ProxyIP"] === true; });
     if (valid.length === 0) return;
     var header = ["节点", "ip", "端口", "国家", "城市", "ASN", "组织", "数据中心", "响应时间", "出口ip", "出口类型"];
     function cell(e, k) {
