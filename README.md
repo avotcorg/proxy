@@ -1,7 +1,7 @@
 # Check ProxyIP
 
 基于 Cloudflare Workers 的 ProxyIP 检测工具。提供网页界面和 JSON 接口，支持单个或批量检测、域名解析、出口信息查看和结果导出。
-<img width="1285" height="835" alt="642e4f86-0071-4899-93bd-7513a13b19cd" src="https://github.com/user-attachments/assets/7250f3b0-cf44-4154-9a6d-7ee13f59f47f" />
+<img width="1076" height="806" alt="4b910f58-aaba-47f4-a2d7-b83aa0aa0180" src="https://github.com/user-attachments/assets/94bffccf-5702-431a-9dc2-dbc36e77f548" />
 
 本文档对应 `worker.js`（外部检测接口版）。
 
