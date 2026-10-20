@@ -163,6 +163,9 @@ function normalizeExternalResult(data, cost) {
   const exitCity = String(pickField(data, ["出口城市", "exitCity", "exit_city"], ""));
   const rawDelay = pickField(data, ["响应时间", "delay", "latency", "rtt", "time", "responseTime", "response_time"], null);
 
+  const outV4 = String(pickField(data, ["出口IPv4", "exitIPv4", "exit_ipv4"], ""));
+  const outV6 = String(pickField(data, ["出口IPv6", "exitIPv6", "exit_ipv6"], ""));
+
   if (!outIp) {
     return { ok: false, reason: "检测接口未返回出口 IP 信息" };
   }
@@ -179,6 +182,9 @@ function normalizeExternalResult(data, cost) {
     exitCountry,
     exitCity,
     cost: parseDelayMs(rawDelay, cost),
+    outV4,
+    outV6,
+    dual: data["双栈"] === true,
     raw: data
   };
 }
@@ -244,6 +250,9 @@ async function probeTarget(host, port) {
       "ASN": probe.asn || "",
       "组织": probe.org || "",
       "出口地址与目标是否同族一致": probe.outIp === host,
+      "出口IPv4": probe.outV4 || "",
+      "出口IPv6": probe.outV6 || "",
+      "双栈": !!probe.dual,
       "有效ProxyIP": true
     }
   };
@@ -1205,6 +1214,7 @@ const HTML_PAGE = `<!DOCTYPE html>
   function entryGroup(e, map) {
     var fam = entryFamily(e);
     if (!fam) return "";
+    if (e["双栈"] === true) return "both";
     if (dualPair(e, map)) return "both";
     return fam === "4" ? "v4" : "v6";
   }
@@ -1346,6 +1356,7 @@ const HTML_PAGE = `<!DOCTYPE html>
   }
   function exitInfo(e) {
     var own = { ip: e["出口ip"] || "—", type: e["出口类型"] || "—" };
+    if (e["双栈"] === true) return { ip: e["出口IPv4"] + " / " + e["出口IPv6"], type: "双栈" };
     if (e["有效ProxyIP"] !== true) return own;
     var map = buildGroupMap();
     if (!dualPair(e, map)) return own;
@@ -1353,7 +1364,7 @@ const HTML_PAGE = `<!DOCTYPE html>
     map[groupKey(e)].forEach(function (x) {
       if (entryFamily(x) === "4") v4 = x["出口ip"]; else v6 = x["出口ip"];
     });
-    return { ip: v4 + " / " + v6, type: "ipv4/ipv6" };
+    return { ip: v4 + " / " + v6, type: "双栈" };
   }
 
   function normalizeColoCode(colo) {
@@ -1591,6 +1602,8 @@ const HTML_PAGE = `<!DOCTYPE html>
     var exitCountry = String(clientPickField(data, ["出口国家", "exitCountry", "exit_country"]));
     var exitCity = String(clientPickField(data, ["出口城市", "exitCity", "exit_city"]));
     var rawDelay = clientPickField(data, ["响应时间", "delay", "latency", "rtt", "time", "responseTime", "response_time"]);
+    var outV4 = String(clientPickField(data, ["出口IPv4", "exitIPv4", "exit_ipv4"]));
+    var outV6 = String(clientPickField(data, ["出口IPv6", "exitIPv6", "exit_ipv6"]));
 
     if (!outIp) return { ok: false, reason: "检测接口未返回出口 IP 信息" };
 
@@ -1605,7 +1618,10 @@ const HTML_PAGE = `<!DOCTYPE html>
       org: org,
       exitCountry: exitCountry,
       exitCity: exitCity,
-      cost: clientParseDelayMs(rawDelay, cost)
+      cost: clientParseDelayMs(rawDelay, cost),
+      outV4: outV4,
+      outV6: outV6,
+      dual: data["双栈"] === true
     };
   }
 
@@ -1656,6 +1672,9 @@ const HTML_PAGE = `<!DOCTYPE html>
             "ASN": norm.asn || "",
             "组织": norm.org || "",
             "出口地址与目标是否同族一致": norm.outIp === job.host,
+            "出口IPv4": norm.outV4,
+            "出口IPv6": norm.outV6,
+            "双栈": norm.dual,
             "有效ProxyIP": true
           };
         }).catch(function () {
@@ -1798,8 +1817,8 @@ const HTML_PAGE = `<!DOCTYPE html>
     var country = e["出口国家"] || e["国家"] || "";
     var city = e["出口城市"] || e["城市"] || "";
     var asn = e["ASN"] ? "AS" + e["ASN"] : "";
-    var exitIp = e["出口ip"] || "";
-    var exitType = e["出口类型"] || "";
+    var exitIp = e["双栈"] === true ? e["出口IPv4"] + "/" + e["出口IPv6"] : (e["出口ip"] || "");
+    var exitType = e["双栈"] === true ? "双栈" : (e["出口类型"] || "");
     var tail = [country, city, asn, e["组织"] || "", exitIp, exitType]
       .filter(function (x) { return x; })
       .join(" ");
