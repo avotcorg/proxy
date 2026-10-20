@@ -12,6 +12,7 @@
 - 同一个域名同时有 IPv4 和 IPv6 出口时，筛选里归入「IPv4&IPv6」
 - 显示检测机房、出口 IP、出口国家、出口城市、ASN、组织、响应时间
 - 按状态（有效、失败、OnlyIPv4、OnlyIPv6、IPv4&IPv6）和出口国家筛选
+- 支持IPv4、IPv6、双栈(IPv4/IPv6) 出口展示
 - 复制有效结果，导出 TXT 或 CSV；IPv6 复制时自动补 `[]`
 - 单目标模式记住最近 8 条输入（保存在浏览器 localStorage）
 - 也能有效检测出Cloudflare 官网反代
