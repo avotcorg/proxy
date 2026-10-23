@@ -113,7 +113,7 @@ const ECHO_PATH = "/__proxyip_echo";
 const TRACE_TIMEOUT = 10000;
 const GENERIC_FAIL_REASON = "远端返回失败结果";
 const DEBUG_PROBE = true;
-const EXTERNAL_CHECK_API_BASE = "https://api.ytb1.dns-dynamic.net/check";
+const EXTERNAL_CHECK_API_BASE = "https://avotc.zzzzzz.hidns.vip/check";
 
 function pickField(obj, keys, fallback = "") {
   if (!obj || typeof obj !== "object") return fallback;
@@ -1554,7 +1554,7 @@ const HTML_PAGE = `<!DOCTYPE html>
   }
 
   function jsonHeaders() { return { "Accept": "application/json" }; }
-  var CLIENT_EXTERNAL_API_BASE = "https://api.ytb1.dns-dynamic.net/check";
+  var CLIENT_EXTERNAL_API_BASE = "https://avotc.zzzzzz.hidns.vip/check";
   var CLIENT_PROBE_TIMEOUT_MS = 10000;
 
   function clientPickField(obj, keys) {
