@@ -4,7 +4,7 @@
 @set_time_limit(0);
 @ignore_user_abort(true);
 error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
-define('ECHO_HOST', 'cloudflare.com');
+define('ECHO_HOST', 'ipv4.090227.xyz');
 define('ECHO_PATH', '/');
 define('TRACE_TIMEOUT', 5);
 define('TLS_RETRY_TIMEOUT_MS', 5000);
